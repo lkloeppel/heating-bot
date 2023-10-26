@@ -1,0 +1,50 @@
+{
+  "name": "weather-bot",
+  "version": "1.0.0",
+  "description": "Bot to control the enb",
+  "author": "lkloeppel",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "eslint 'src/**/*.ts'",
+    "build": "npm run clean && npm run lint && webpack",
+    "start": "npm run build &&  NODE_TLS_REJECT_UNAUTHORIZED='0' node -r dotenv/config dist/index.js"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dayjs": "^1.11.9",
+    "lodash": "4.17.21",
+    "node-cron": "^3.0.2",
+    "node-notifier": "^10.0.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "4.14.195",
+    "@types/node": "18.11.9",
+    "@types/node-cron": "3.0.8",
+    "@types/node-notifier": "^8.0.2",
+    "@typescript-eslint/eslint-plugin": "6.0.0",
+    "@typescript-eslint/parser": "6.0.0",
+    "dotenv": "16.3.1",
+    "eslint": "8.45.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-import-resolver-typescript": "3.5.5",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-prettier": "5.0.0",
+    "eslint-plugin-unused-imports": "3.0.0",
+    "prettier": "3.0.0",
+    "rimraf": "5.0.1",
+    "ts-loader": "9.4.4",
+    "typescript": "5.1.6",
+    "webpack": "5.88.1",
+    "webpack-cli": "5.1.4",
+    "webpack-node-externals": "3.0.0"
+  },
+  "engines": {
+    "node": ">=16.11"
+  }
+}
